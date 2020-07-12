@@ -1,4 +1,4 @@
-def dearProf(m="Mr. JA: I hope you like my code ...\n"):
+def dearProf(m="Mr. JA, I hope you like my code ...\n"):
     def new_line_d(fn):
         def new_line(*args, **kwargs):
             print(m)
