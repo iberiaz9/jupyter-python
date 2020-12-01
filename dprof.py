@@ -1,10 +1,15 @@
-from functools import wraps
 
-def dearProf(m="Mr. JA, I hope you like my code ...\n"):
-    def new_line_d(fn):
-        @wraps(fn)
-        def new_line(*args, **kwargs):
+def dearProfx(m="Sorry prof, but the cat erased half of my journal!\n"):
+    def deco(fn):
+        def inner(*args, **kwargs):
             print(m)
             return fn(*args, **kwargs)
-        return new_line
-    return new_line_d
+        return inner
+    return deco
+
+
+def dearProf(fn):
+    def inner(*args, **kwargs):
+        print("Hello Mr. JA, I hope you like my code ...\n")
+        return fn(*args, **kwargs)
+    return inner
